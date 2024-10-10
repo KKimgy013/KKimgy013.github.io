@@ -76,7 +76,7 @@
           margin-block-end: 1em;
           margin-inline-start: 0px;
           margin-inline-end: 0px;
-          padding-inline-start: 0; /* 40px을 0으로 변경 */
+          padding-inline-start: 0;
           unicode-bidi: isolate;
         }
 
@@ -116,7 +116,6 @@
           align-self: start;
           display: flex;
           align-items: center;
-          gap: 2px;
           text-align: center;
           justify-content: start;
           flex: 1;
@@ -129,6 +128,13 @@
           flex-direction: column;
           width: 50px;
           margin: auto 0;
+          
+          background-color: transparent; /* 기본 배경색 투명 */
+          color: #d7d7d9; /* 기본 글자색 */
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s; /* 애니메이션 효과 */
+          flex: 1; 
+
         }
         
         .value-box {
@@ -207,7 +213,7 @@
         <div class="modal-content">
             <header class="modal-header">
             <h2>공유 종목 범위 설정</h2>
-            <button class="close-button" onclick="location.href='../index.html';">
+            <button class="close-button" onclick="location.href='그룹설정_그룹원.html';">
               <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb272e60aea88b8cbf673393fd221675e6d25b57d59f7e3bf68a73956a2aafc2?placeholderIfAbsent=true&apiKey=86dc8bbd6ce84779a4c9a5da968b9204" alt="Close modal" class="close-button-icon" />
             </button>
             </header>
@@ -218,12 +224,12 @@
                 <span>삼성전자</span>
               </div>
               <div class="value-ratio-box">
-              <div class="value-box">
-                  <span class="value">금액</span>
-              </div>
-              <div class="ratio-box">
-                  <span class="ratio">비율</span>
-              </div>
+                <div class="value-box">
+                    <span class="value">금액</span>
+                </div>
+                <div class="ratio-box">
+                    <span class="ratio">비율</span>
+                </div>
               </div>
             </li>
             <li class="stock-item">
@@ -232,12 +238,12 @@
                   <span>TSLA</span>
                 </div>
                 <div class="value-ratio-box">
-                <div class="value-box">
-                    <span class="value">금액</span>
-                </div>
-                <div class="ratio-box">
-                    <span class="ratio">비율</span>
-                </div>
+                  <div class="value-box">
+                      <span class="value">금액</span>
+                  </div>
+                  <div class="ratio-box">
+                      <span class="ratio">비율</span>
+                  </div>
                 </div>
             </li>
             <li class="stock-item">
@@ -246,12 +252,12 @@
                   <span>NVDIA</span>
                 </div>
                 <div class="value-ratio-box">
-                <div class="value-box">
-                    <span class="value">금액</span>
-                </div>
-                <div class="ratio-box">
-                    <span class="ratio">비율</span>
-                </div>
+                  <div class="value-box">
+                      <span class="value">금액</span>
+                  </div>
+                  <div class="ratio-box">
+                      <span class="ratio">비율</span>
+                  </div>
                 </div>
             </li>
           </ul>
