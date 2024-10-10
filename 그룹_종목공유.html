@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang=“en”>
+<head>
+    <meta charset="UTF-8">
+    <title>종목공유모달</title>
+
+    <style>
+        .share-stock-range-modal {
+          background-color: #fff;
+          display: flex;
+          max-width: 480px;
+          width: 100%;
+          flex-direction: column;
+          overflow: hidden;
+          margin: 0 auto;
+          font: 600 15px Inter, sans-serif;
+        }
+        
+        .overlay {
+          background-color: rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          display: flex;
+          width: 100%;
+          padding-top: 240px;
+          flex-direction: column;
+          border: 1px solid #000;
+        }
+        
+        .modal-content {
+          border-radius: 9px;
+          width: 322px;
+          height: 333px;
+          background-color: #fff;
+          box-shadow: 0 4px 4px rgba(45, 110, 238, 0.25);
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          aspect-ratio: 1;
+          padding: 0 19px;
+          margin: 0 27px;
+
+          max-width: 400px;
+          height: auto;
+        }
+        
+        .modal-header {
+          padding-top: 30px;
+          padding-left: 24px;
+          padding-right: 19px;
+          display: flex;
+          width: 100%;
+          color: #000;
+          justify-content: space-between;
+        }
+        
+        .close-button {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          padding-right: 19px;
+        }
+        
+        ul {
+          display: block;
+          list-style-type: disc;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+          padding-inline-start: 0; /* 40px을 0으로 변경 */
+          unicode-bidi: isolate;
+        }
+
+
+        .stock-list {
+          display: flex;
+          margin-top: 30px;
+          width: 100%;
+          max-width: 282px;
+          flex-direction: column;
+          font-size: 18px;
+          font-weight: 400;
+          white-space: nowrap;
+          justify-content: center;
+        }
+        
+        .stock-item {
+          display: flex;
+          width: 100%;
+          gap: 40px 81px;
+          margin-bottom: 22px;
+        }
+        
+        .stock-info {
+          display: flex;
+          gap: 7px;
+          color: #000;
+          flex: 1;
+          align-items: center;
+        }
+        
+        .stock-checkbox {
+          margin-right: 10px;
+        }
+        
+        .value-ratio-box {
+          align-self: start;
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          text-align: center;
+          justify-content: start;
+          flex: 1;
+        }
+        
+        .value-box, .ratio-box {
+          border-radius: 5px;
+          align-self: stretch;
+          display: flex;
+          flex-direction: column;
+          width: 50px;
+          margin: auto 0;
+        }
+        
+        .value-box {
+          color: #fff;
+        }
+        
+        .ratio-box {
+          color: #d7d7d9;
+        }
+        
+        .value, .ratio {
+          border-radius: 5px;
+          padding: 1px 5px;
+        }
+        
+        .value {
+          background-color: #2260bf;
+        }
+        
+        .ratio {
+          background-color: #fff;
+        }
+        
+        .save-button {
+          border-radius: 7px;
+          display: flex;
+          flex-direction: column;
+          color: #fff;
+          white-space: nowrap;
+          text-align: center;
+
+          background: #2260bf;;
+          border: none;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+
+          margin: 26px 19px 26px 226px; /* 위, 오른쪽, 아래, 왼쪽 순서 */
+          width: 77px;
+          height: 40px;
+        }
+        
+        .save-text {
+          border-radius: 7.236px;
+          background-color: #2260bf;
+        }
+        
+        .footer-image {
+          aspect-ratio: 7.81;
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+          margin-top: 191px;
+        }
+        
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+    </style>
+        
+</head>
+<body>
+    
+        
+    <section class="share-stock-range-modal">
+        <div class="overlay">
+        <div class="modal-content">
+            <header class="modal-header">
+            <h2>공유 종목 범위 설정</h2>
+            <button class="close-button" onclick="location.href='그룹설정_그룹원.html';">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb272e60aea88b8cbf673393fd221675e6d25b57d59f7e3bf68a73956a2aafc2?placeholderIfAbsent=true&apiKey=86dc8bbd6ce84779a4c9a5da968b9204" alt="Close modal" class="close-button-icon" />
+            </button>
+            </header>
+            <ul class="stock-list">
+            <li class="stock-item">
+              <div class="stock-info">
+                <input type="checkbox" class="stock-checkbox" />
+                <span>삼성전자</span>
+              </div>
+              <div class="value-ratio-box">
+              <div class="value-box">
+                  <span class="value">금액</span>
+              </div>
+              <div class="ratio-box">
+                  <span class="ratio">비율</span>
+              </div>
+              </div>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                  <input type="checkbox" class="stock-checkbox" />
+                  <span>TSLA</span>
+                </div>
+                <div class="value-ratio-box">
+                <div class="value-box">
+                    <span class="value">금액</span>
+                </div>
+                <div class="ratio-box">
+                    <span class="ratio">비율</span>
+                </div>
+                </div>
+            </li>
+            <li class="stock-item">
+                <div class="stock-info">
+                  <input type="checkbox" class="stock-checkbox" />
+                  <span>NVDIA</span>
+                </div>
+                <div class="value-ratio-box">
+                <div class="value-box">
+                    <span class="value">금액</span>
+                </div>
+                <div class="ratio-box">
+                    <span class="ratio">비율</span>
+                </div>
+                </div>
+            </li>
+          </ul>
+          <button class="save-button">
+          <span class="save-text">저장</span>
+          </button>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c81f2f1be3faf273ffca18e2956ffe747da309fcaa6e50bf2c027b2fe6c00747?placeholderIfAbsent=true&apiKey=86dc8bbd6ce84779a4c9a5da968b9204" alt="" class="footer-image" />
+        </div>
+    </section>
+</body>
+</html>
